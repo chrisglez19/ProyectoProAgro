@@ -34,6 +34,31 @@ namespace ApiProAgro.Controllers
             accessData.Agregar(usuario);
         }
 
+        // POST: api/Usuarios/Login
+        [Route("api/Usuarios/Login")]
+        public Models.Respuesta Login(Usuarios usuario)
+        {
+            Models.Respuesta respuesta = new Models.Respuesta();
+            List<Usuarios> listausuarios =accessData.Consultar().ToList();
+            foreach ( var elemen in listausuarios)
+            {
+
+                if (usuario.rfc == elemen.rfc && usuario.contraseña == elemen.contraseña)
+                {
+                    respuesta.status = true;
+                    respuesta.idUsuario = elemen.idUsuario;
+                    return respuesta;
+                }
+                else
+                {
+                    respuesta.status = false;
+                    respuesta.mensaje = "Usuario o contraseña invalidos";
+                }
+            }
+
+            return respuesta;
+        }
+
         // PUT: api/Usuarios/5
         public void Put(int id, [FromBody]Usuarios usuario)
         {

@@ -60,6 +60,7 @@
     <Compile Include="Permisos.cs">
       <DependentUpon>ProAgro.tt</DependentUpon>
     </Compile>
+    <Compile Include="GeoreferenciasHelper.cs" />
     <Compile Include="ProAgro.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
