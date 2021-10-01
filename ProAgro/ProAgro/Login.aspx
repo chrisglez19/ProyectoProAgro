@@ -29,13 +29,14 @@
                <asp:TextBox ID="txtPass" type="password" runat="server"  placeholder="Ingresa Contraseña" Width="300"></asp:TextBox>
             </div>
             <div>
+                <asp:Label class="text-danger" ID="lblError" runat="server" Text=""></asp:Label>
+            </div>
+            <div>
                 <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-success btn-sm" style="margin-top: 15px"  OnClick="btnIngresar_Click" />
             </div>
             
         </form>
-        <div>
-            <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-        </div>
+        
      </div>
       </div>
 </body>
